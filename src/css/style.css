@@ -1986,17 +1986,17 @@ li {
     width: 110px;
   }
   .coin {
-    width: 150px;
+    width: 100px;
   }
   .coin-1 {
-    width: 70px;
+    width: 50px;
   }
   .coin-2 {
     display: none;
-    width: 130px;
+    width: 100px;
   }
   .coin-3 {
-    width: 60px;
+    width: 50px;
   }
   .skull {
     width: 380px;
@@ -2272,17 +2272,17 @@ li {
   }
   .coin {
     /* display: none; */
-    width: 80px;
+    width: 50px;
   }
   .coin-1 {
-    width: 50px;
+    width: 30px;
   }
   .coin-2 {
     display: block;
-    width: 80px;
+    width: 50px;
   }
   .coin-3 {
-    width: 60px;
+    width: 30px;
   }
   .text-block-parent-1 {
     height: 70vh;
