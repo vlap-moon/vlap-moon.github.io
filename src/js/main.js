@@ -33,8 +33,41 @@ Object.entries(audioConfig).forEach(([key, config]) => {
   if (config.loop) audios[key].loop = true;
 });
 
+// Lógica para el modal de música
+function showMusicModal() {
+  const modal = document.getElementById('music-modal');
+  if (modal) modal.style.display = 'flex';
+}
+function hideMusicModal() {
+  const modal = document.getElementById('music-modal');
+  if (modal) modal.style.display = 'none';
+}
+function enableMusic() {
+  audios.mainBg.play();
+  hideMusicModal();
+  localStorage.setItem('musicAccepted', 'true');
+}
+function disableMusic() {
+  hideMusicModal();
+  localStorage.setItem('musicAccepted', 'false');
+}
 window.onload = function() {
-  setTimeout(() => audios.mainBg.play(), 5000);
+  // Solo mostrar el modal si no se ha aceptado antes
+  const accepted = localStorage.getItem('musicAccepted');
+  if (accepted === 'true') {
+    audios.mainBg.play();
+  } else if (accepted === 'false') {
+    // No hacer nada, usuario ya rechazó
+  } else {
+    showMusicModal();
+  }
+  // Botones del modal
+  setTimeout(() => {
+    const yesBtn = document.getElementById('music-yes');
+    const noBtn = document.getElementById('music-no');
+    if (yesBtn) yesBtn.onclick = enableMusic;
+    if (noBtn) noBtn.onclick = disableMusic;
+  }, 0);
 };
 
 const pauseAllExcept = (...exceptions) => {
