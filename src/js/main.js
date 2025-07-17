@@ -45,22 +45,12 @@ function hideMusicModal() {
 function enableMusic() {
   audios.mainBg.play();
   hideMusicModal();
-  localStorage.setItem('musicAccepted', 'true');
 }
 function disableMusic() {
   hideMusicModal();
-  localStorage.setItem('musicAccepted', 'false');
 }
 window.onload = function() {
-  // Solo mostrar el modal si no se ha aceptado antes
-  const accepted = localStorage.getItem('musicAccepted');
-  if (accepted === 'true') {
-    audios.mainBg.play();
-  } else if (accepted === 'false') {
-    // No hacer nada, usuario ya rechazó
-  } else {
-    showMusicModal();
-  }
+  showMusicModal();
   // Botones del modal
   setTimeout(() => {
     const yesBtn = document.getElementById('music-yes');
