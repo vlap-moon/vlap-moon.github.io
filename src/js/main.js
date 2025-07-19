@@ -52,18 +52,29 @@ function enableMusic() {
 function disableMusic() {
   hideMusicModal();
 }
-window.onload = function() {
-  // Botones del modal
-  setTimeout(() => {
-    showMusicModal();
-  }, 5000);
-  setTimeout(() => {
-    const yesBtn = document.getElementById('music-yes');
-    const noBtn = document.getElementById('music-no');
-    if (yesBtn) yesBtn.onclick = enableMusic;
-    if (noBtn) noBtn.onclick = disableMusic;
-  }, 0);
-};
+$(function() {
+    setTimeout(() => {
+      showMusicModal();
+    }, 5000);
+    setTimeout(() => {
+      const yesBtn = document.getElementById('music-yes');
+      const noBtn = document.getElementById('music-no');
+      if (yesBtn) yesBtn.onclick = enableMusic;
+      if (noBtn) noBtn.onclick = disableMusic;
+    }, 0);
+});
+// window.onload = function() {
+//   // Botones del modal
+//   setTimeout(() => {
+//     showMusicModal();
+//   }, 5000);
+//   setTimeout(() => {
+//     const yesBtn = document.getElementById('music-yes');
+//     const noBtn = document.getElementById('music-no');
+//     if (yesBtn) yesBtn.onclick = enableMusic;
+//     if (noBtn) noBtn.onclick = disableMusic;
+//   }, 0);
+// };
 
 const pauseAllExcept = (...exceptions) => {
   Object.entries(audios).forEach(([key, audio]) => {
