@@ -53,8 +53,10 @@ function disableMusic() {
   hideMusicModal();
 }
 window.onload = function() {
-  showMusicModal();
   // Botones del modal
+  setTimeout(() => {
+    showMusicModal();
+  }, 500);
   setTimeout(() => {
     const yesBtn = document.getElementById('music-yes');
     const noBtn = document.getElementById('music-no');
