@@ -56,7 +56,7 @@ window.onload = function() {
   // Botones del modal
   setTimeout(() => {
     showMusicModal();
-  }, 500);
+  }, 5000);
   setTimeout(() => {
     const yesBtn = document.getElementById('music-yes');
     const noBtn = document.getElementById('music-no');
