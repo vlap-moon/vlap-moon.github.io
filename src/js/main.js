@@ -55,7 +55,7 @@ function disableMusic() {
 $(function() {
     setTimeout(() => {
       showMusicModal();
-    }, 5000);
+    }, 7000);
     setTimeout(() => {
       const yesBtn = document.getElementById('music-yes');
       const noBtn = document.getElementById('music-no');
